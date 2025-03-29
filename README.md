@@ -8,7 +8,7 @@ This is the backend for the Bookmark Manager full-stack web application. It prov
 
 •  Secure token-based authentication using JWT
 
-•  Bookmark CRUD operations (Create, Read, Update, Delete)
+•  Bookmark operations (Create, Read, Delete)
 
 •  MongoDB as the database with Mongoose ORM
 
