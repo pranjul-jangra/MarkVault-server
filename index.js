@@ -183,10 +183,10 @@ app.post("/api/auth/logout", async (req, res) => {
 });
 
 // ✅ Logout from All Devices
-app.post("/api/auth/logout-all", async (req, res) => {
+app.post("/api/auth/logout-all", authenticateUser, async (req, res) => {
   try {
-    const { email } = req.body;
-    const user = await User.findOne({ email });
+    const user = await User.findById(req.user.id);
+
     if (!user) return res.status(403).json({ message: "User not found" });
 
     user.refreshTokens = [];
